@@ -1,0 +1,235 @@
+.creditCardIframe,
+.cardSummaryContainer {
+  width: 640px;
+  max-width: 100%;
+  margin-inline: auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.cardSummaryContainer :global(.vw-100) {
+  width: auto;
+  margin-left: 0;
+}
+:global(.pa5.bg-muted-5),
+.cardSummaryContainer {
+  background-color: #fff;
+}
+.cardSummaryContainer > :global(.nh5.nh0-ns) {
+  margin-left: 0;
+  margin-right: 0;
+}
+.cardSummaryContainer :global(.vtex-checkout-components-0-x-groupOption) {
+  min-height: auto;
+  height: 3rem;
+  font-family: GothamRoundedLight;
+  font-size: 1rem;
+  transition: color 0.3s;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding-inline: 0.75rem;
+}
+.cardSummaryContainer :global(.vtex-checkout-components-0-x-groupOption):hover,
+.cardSummaryContainer :global(.vtex-checkout-components-0-x-groupOption):focus {
+  background-color: #fff;
+  color: #ffd500;
+}
+.cardSummaryContainer
+  :global(.vtex-checkout-components-0-x-groupOption.option-selected) {
+  background-color: #f1f7ff;
+  box-shadow: inset 0px 0px 5px rgba(190, 208, 223, 1);
+  color: #ffd500;
+}
+.cardSummaryContainer
+  :global(.vtex-checkout-components-0-x-groupOption.option-selected):hover {
+  background-color: #f1f7ff;
+}
+:global(.b--muted-4.bt) > :global(.w-100.pr5.pr0-ns.pl5) {
+  padding-left: 0;
+}
+.anotherCard {
+  background-color: #eee;
+}
+:global(.fw5.c-muted-1.flex.mb6) {
+  font-weight: bold;
+}
+:global(.fw6.pb5.ph5) {
+  padding: 1rem;
+}
+:global(.fw6.pb5.ph5) > :global(.flex.items-center.mt6) {
+  gap: 1rem;
+  margin-top: 1rem;
+}
+/* :global(.fw6.pb5.ph5) :global(.normal.c-muted-1.ml7.mw4) {
+  max-width: unset;
+} */
+:global(.fw6.pb5.ph5)
+  :global(.normal.c-muted-1.ml7.mw4)
+  > :global(.CscInput_cscInput__eZSID) {
+  width: 100%;
+}
+:global(.CscInput_cscInput__eZSID) :global(.vtex-input__help-text) {
+  display: none;
+}
+:global(.fw6.pb5.ph5) > :global(.flex.items-center.mt6) > svg {
+  width: 6rem;
+  order: 2;
+  height: auto;
+}
+:global(.flex.items-center.mt6) > :global(.normal.c-muted-1.ml7.mw4) {
+  margin-left: 0;
+}
+:global(.CardForm_numberInput__3fhBe),
+:global(.CardForm_cardHolderNameInput__1t8kG) {
+  width: 100%;
+  max-width: unset;
+}
+:global(.CardForm_numberInput__3fhBe) :global(.vtex-input-prefix__group),
+:global(.CardForm_cardHolderNameInput__1t8kG)
+  :global(.vtex-input-prefix__group),
+:global(.CscInput_cscInput__eZSID) :global(.vtex-input-prefix__group) {
+  height: 56px;
+  border: 1px solid #bfc1c3;
+  border-radius: 6px;
+}
+:global(.CscInput_cscInput__eZSID) :global(.vtex-input-prefix__group) {
+  justify-content: space-between;
+}
+:global(.CardForm_numberInput__3fhBe)
+  :global(.vtex-input-prefix__group.b--danger),
+:global(.CardForm_cardHolderNameInput__1t8kG)
+  :global(.vtex-input-prefix__group.b--danger),
+:global(.CscInput_cscInput__eZSID)
+  :global(.vtex-input-prefix__group.b--danger) {
+  border-color: #e13232;
+}
+:global(.CardForm_numberInput__3fhBe)
+  :global(.vtex-input-prefix__group)
+  > input,
+:global(.CardForm_cardHolderNameInput__1t8kG)
+  :global(.vtex-input-prefix__group)
+  > input,
+:global(.CscInput_cscInput__eZSID) :global(.vtex-input-prefix__group) > input {
+  font-family: "GothamRoundedMedium";
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+:global(.CardForm_numberInput__3fhBe) :global(.vtex-input-prefix__group),
+:global(.CardForm_cardHolderNameInput__1t8kG)
+  :global(.vtex-input-prefix__group),
+:global(.CardForm_numberInput__3fhBe) :global(.vtex-input__error),
+:global(.CardForm_cardHolderNameInput__1t8kG) :global(.vtex-input__error),
+:global(.CscInput_cscInput__eZSID) :global(.vtex-input__error),
+:global(.CscInput_cscInput__eZSID) :global(.vtex-input-prefix__group) {
+  padding-left: 0;
+}
+:global(.CardForm_numberInput__3fhBe) :global(.vtex-input__label),
+:global(.CardForm_cardHolderNameInput__1t8kG) :global(.vtex-input__label) {
+  padding-left: 0;
+  margin-bottom: 0.25rem;
+  color: #000;
+}
+:global(.CardForm_additionalFieldsContainer__1RKT9) {
+  flex-direction: column;
+}
+:global(.CardForm_datesContainer__2mtO9) {
+  margin-right: 0;
+}
+:global(.CardForm_datesContainer__2mtO9) :global(.w1.ph2.tc) {
+  display: none;
+}
+:global(.CardForm_datesContainer__2mtO9) > :global(.flex.items-baseline) {
+  justify-content: space-between;
+  gap: 4%;
+}
+:global(.CardForm_additionalFieldsContainer__1RKT9)
+  :global(.CardForm_datesContainer__2mtO9)
+  > :global(.c-on-base.mb3),
+:global(.CscInput_cscInput__eZSID) :global(.vtex-input__label) {
+  font-family: GothamRoundedLight !important;
+  font-size: 12px;
+  color: #000;
+  line-height: 16px;
+  padding-left: 0;
+  margin-bottom: 0.25rem;
+}
+:global(.CardForm_datesContainer__2mtO9) :global(.vtex-dropdown__button) {
+  padding: 0 0.5rem 0 1rem !important;
+  font-family: GothamRoundedMedium !important;
+  color: #000 !important;
+  font-weight: bold !important;
+}
+:global(.CardForm_datesContainer__2mtO9)
+  :global(.vtex-dropdown__button)::before {
+  background-size: contain !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+:global(.CardForm_datesContainer__2mtO9) :global(.vtex-dropdown__container) {
+  height: 56px !important;
+  border: 1px solid #bfc1c3;
+  border-radius: 6px;
+}
+:global(.vtex-dropdown__container) option {
+  font-family: GothamRoundedMedium !important;
+  font-weight: bold !important;
+}
+:global(.CardForm_dateInput__1twpO) {
+  width: 48%;
+}
+:global(.CscInput_cscInput__eZSID) {
+  max-width: unset;
+  width: 48%;
+}
+:global(.CscInput_cscInput__eZSID) :global(.vtex-button) {
+  border-radius: 0.25rem;
+  border: none;
+  color: #000;
+  background-color: #eee;
+}
+:global(.CscInput_cscInput__eZSID)
+  :global(.vtex-input__suffix)
+  :global(.vtex-button__label) {
+  padding: 0.25rem 0.5rem !important;
+}
+:global(.vtex-button) {
+  border-radius: 6px !important;
+  font-family: GothamRoundedMedium !important;
+  text-transform: unset !important;
+}
+:global(.vtex-button):hover {
+  background-color: #ffd500;
+}
+:global(.vtex-checkout-components-0-x-groupOption.option-selected)
+  :global(.vtex-checkout-components-0-x-caretWrapper)
+  > svg {
+  display: none;
+}
+:global(.vtex-checkout-components-0-x-caretWrapper) {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: auto;
+}
+:global(.vtex-checkout-components-0-x-groupOption.option-selected)
+  :global(.vtex-checkout-components-0-x-caretWrapper)::after {
+  position: absolute;
+  content: "\2713";
+  color: #46a546;
+  font-weight: bold;
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 1.5rem;
+  height: 1.5rem; */
+  /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png");
+  background-size: contain; */
+}
+
+/* Media queries */
+@media screen and (min-width: 30em) {
+  :global(.CardForm_additionalFieldsContainer__1RKT9) {
+    gap: 1rem;
+  }
+}

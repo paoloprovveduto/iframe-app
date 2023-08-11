@@ -1,0 +1,26 @@
+{
+  "vendor": "arcaplanetqa",
+  "name": "credit-card-form",
+  "version": "0.0.1-beta.40",
+  "title": "Credit Card Form",
+  "description": "App for the mobile webview of checkout",
+  "defaultLocale": "it-IT",
+  "builders": {
+    "messages": "1.x",
+    "store": "0.x",
+    "react": "3.x"
+  },
+  "dependencies": {
+    "vtex.styleguide": "9.x",
+    "vtex.css-handles": "0.x",
+    "vtex.store": "2.x",
+    "vtex.store-header": "2.x",
+    "vtex.store-footer": "2.x",
+    "vtex.render-runtime": "8.x",
+    "vtex.order-manager": "0.x",
+    "vtex.order-payment": "0.x",
+    "vtex.payment-flags": "2.x",
+    "vtex.checkout-components": "0.x"
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

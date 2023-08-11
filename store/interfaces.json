@@ -1,0 +1,9 @@
+{
+  "credit-card-iframe": {
+    "component": "CreditCardIframe"
+  },
+  "order-context-provider": {
+    "component": "OrderContextProvider",
+    "composition": "children"
+  }
+}
