@@ -6,6 +6,8 @@ import { Button, Spinner } from "vtex.styleguide";
 import CardSummary from "./components/CardSummary";
 import styles from "./style.css";
 import type { CardType, CustomWindow, Payment, PaymentSystem } from "./typings/global";
+// @ts-ignore
+import placeOrderComplete from "./utils/place-order-complete";
 
 interface Props {}
 // initialize the libraries inside variables
@@ -145,73 +147,6 @@ const CreditCardIframe: StorefrontFunctionComponent<Props> = ({}) => {
       setSubmitLoading(false)
     }
   }
-  
-  const htmlScript = `async function placeOrderComplete(responseObject) {
-    const {
-        orderGroup: orderGroupId,
-        id: transactionId,
-        receiverUri,
-        merchantTransactions,
-        paymentData: { payments: transactionPayments },
-        gatewayCallbackTemplatePath,
-      } = responseObject
-
-    const iframe = document.querySelector("iframe#chk-card-form")
-
-    if (merchantTransactions.length > 0) {
-      const allPayments = transactionPayments.reduce(
-        (_payments, transactionPayment) => {
-          const merchantPayments = transactionPayment.merchantSellerPayments
-            .map((merchantPayment) => {
-              const merchantTransaction = merchantTransactions.find(
-                (merchant) => merchant.id === merchantPayment.id,
-              )
-
-              if (!merchantTransaction) {
-                return null
-              }
-
-              const { merchantSellerPayments, ...payment } = transactionPayment
-
-              return {
-                ...payment,
-                ...merchantPayment,
-                currencyCode: "EUR",
-                installmentsValue: merchantPayment.installmentValue,
-                installmentsInterestRate: merchantPayment.interestRate,
-                transaction: {
-                  id: merchantTransaction.transactionId,
-                  merchantName: merchantTransaction.merchantName,
-                },
-              }
-            })
-            .filter((merchantPayment) => merchantPayment != null)
-
-          return _payments.concat(merchantPayments)
-        },
-        []
-      )
-
-      try {
-        const { data } = await postRobot.send(
-          iframe.contentWindow,
-          "sendPayments",
-          {
-            payments: allPayments,
-            receiverUri,
-            orderId: orderGroupId,
-            gatewayCallbackTemplatePath,
-            transactionId,
-          },
-        )
-        window?.location?.href = data
-        window?.JSBridge?.postMessage("paymentInformationSent")
-      } catch(err) {
-        console.log(err)
-        window?.JSBridgeError?.postMessage("paymentInformationSentError")
-      }
-    }
-  }`
 
   useEffect(function createPaymentSystemListener() {
     const listener = postRobot?.on(
@@ -226,11 +161,13 @@ const CreditCardIframe: StorefrontFunctionComponent<Props> = ({}) => {
 
   useEffect(() => {
     window.postRobot = postRobot;
-    const head = document.querySelector("head")
-    const placeOrderScript = document.createElement("script");
-    placeOrderScript.type = "text/javascript";
-    placeOrderScript.innerHTML = htmlScript
-    head?.appendChild(placeOrderScript);
+    window.placeOrderComplete = placeOrderComplete;
+
+    // const head = document.querySelector("head")
+    // const placeOrderScript = document.createElement("script");
+    // placeOrderScript.type = "text/javascript";
+    // placeOrderScript.innerHTML = htmlScript
+    // head?.appendChild(placeOrderScript);
 
     // return () => {
     //   head?.removeChild(placeOrderScript);
@@ -287,7 +224,7 @@ const CreditCardIframe: StorefrontFunctionComponent<Props> = ({}) => {
               [styles.savedCard]: cardType === 'saved',
             })} */
             className={`${styles.creditCardIframe} db vw-100 w-auto-ns nl5 nh0-ns`}
-            title={"Form per le carte di credito 40"}
+            title={"Form per le carte di credito 42"}
             // The scrolling attribute is set to 'no' in the iframe tag, as older versions of IE don't allow
             // this to be turned off in code and can just slightly add a bit of extra space to the bottom
             // of the content that it doesn't report when it returns the height.

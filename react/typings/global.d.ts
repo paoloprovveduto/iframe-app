@@ -39,7 +39,7 @@ export type Payment = {
 export interface CustomWindow extends Window {
   JSBridge: any;
   JSBridgeError: any;
-  placeOrderCompleted: (object: ResponseObject) => void;
+  placeOrderComplete: (object: ResponseObject) => void;
   postRobot: any;
 }
 

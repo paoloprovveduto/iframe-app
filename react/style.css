@@ -1,3 +1,6 @@
+:global(#eA_Opener) {
+  display: none !important;
+}
 .creditCardIframe,
 .cardSummaryContainer {
   width: 640px;
