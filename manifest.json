@@ -1,7 +1,7 @@
 {
   "vendor": "arcaplanetqa",
   "name": "credit-card-form",
-  "version": "0.0.1-beta.42",
+  "version": "0.0.1-beta.43",
   "title": "Credit Card Form",
   "description": "App for the mobile webview of checkout",
   "defaultLocale": "it-IT",

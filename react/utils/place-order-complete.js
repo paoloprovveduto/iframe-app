@@ -56,10 +56,14 @@ export default async function placeOrderComplete(responseObject) {
           transactionId,
         }
       );
-      window.location.href = data;
+      console.log("data: ", data);
+      // window.location.href = data;
+      
+      console.log("Sending event 'paymentInformationSent'");
       window?.JSBridge?.postMessage("paymentInformationSent");
     } catch (err) {
       console.log(err);
+      console.log("Sending event 'paymentInformationSentError'");
       window?.JSBridgeError?.postMessage("paymentInformationSentError");
     }
   }
